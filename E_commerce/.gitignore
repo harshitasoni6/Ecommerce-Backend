@@ -1,0 +1,20 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+
+# Environment files
+.env
+
+# Virtual environment
+ecommerceEnv/
+
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Django static and media files
+/staticfiles
+/media
+
+# VS Code settings (optional)
+.vscode/
