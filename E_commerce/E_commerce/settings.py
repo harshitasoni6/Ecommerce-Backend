@@ -20,13 +20,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 load_dotenv(os.path.join(BASE_DIR, '.env'))
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = "django-insecure-2wg8w7jbgf6*ymz%tx2@1(t*r&nvv5m-k@a4rho4u8@d0v4z5u"
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -155,11 +149,7 @@ REST_FRAMEWORK = {
 SECRET_KEY = config('SECRET_KEY')
 
 SIMPLE_JWT = {
-    # "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
-    # "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
-    # "ROTATE_REFRESH_TOKENS": True,
-    # "BLACKLIST_AFTER_ROTATION": True,
-    # "AUTH_HEADER_TYPES": ("Bearer",),
+
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'ROTATE_REFRESH_TOKENS': False,
@@ -176,16 +166,13 @@ SIMPLE_JWT = {
 CORS_ALLOW_ALL_ORIGINS = True
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-# EMAIL_HOST = "smtp.gmail.com"
-# EMAIL_USE_TLS = True
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = "soniharshita064@gmail.com"          # your Gmail address
-# EMAIL_HOST_PASSWORD = "harshitaapoorv"       # app password or actual password
+
 DEFAULT_FROM_EMAIL = "no-reply@gmail.com"
 
 DEBUG = config('DEBUG', cast=bool)
 
 RAZORPAY_KEY_ID = os.getenv('RAZORPAY_KEY_ID', '')
+
 RAZORPAY_KEY_SECRET = os.getenv('RAZORPAY_KEY_SECRET', '')
 
 # Debug: Print to verify (REMOVE IN PRODUCTION)
